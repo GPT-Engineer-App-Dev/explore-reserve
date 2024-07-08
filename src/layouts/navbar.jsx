@@ -24,6 +24,7 @@ const Layout = () => {
       <main className="flex-grow overflow-auto">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
@@ -106,6 +107,23 @@ const NavItem = ({ to, children, className }) => (
   >
     {children}
   </NavLink>
+);
+
+const Footer = () => (
+  <footer className="bg-gray-800 text-white py-6">
+    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+        <NavLink to="/about" className="hover:underline">About Us</NavLink>
+        <NavLink to="/privacy" className="hover:underline">Privacy Policy</NavLink>
+        <NavLink to="/terms" className="hover:underline">Terms of Service</NavLink>
+      </div>
+      <div className="flex space-x-4 mt-4 md:mt-0">
+        <a href="#" className="hover:underline">Facebook</a>
+        <a href="#" className="hover:underline">Twitter</a>
+        <a href="#" className="hover:underline">Instagram</a>
+      </div>
+    </div>
+  </footer>
 );
 
 export default Layout;
