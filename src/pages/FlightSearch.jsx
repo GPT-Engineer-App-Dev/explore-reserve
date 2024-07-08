@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,6 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { DatePickerDemo } from "@/components/ui/date-picker";
 
 const FlightSearch = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     departure: "",
     arrival: "",
@@ -28,6 +31,7 @@ const FlightSearch = () => {
     e.preventDefault();
     console.log(formData);
     // Add API call or further processing here
+    navigate("/booking-confirmation", { state: formData });
   };
 
   return (
