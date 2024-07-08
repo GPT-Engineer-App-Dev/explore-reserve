@@ -43,6 +43,7 @@ const DesktopNav = () => (
         {item.title}
       </NavItem>
     ))}
+    <NavItem to="/flight-search">Flight Search</NavItem>
   </nav>
 );
 
@@ -68,6 +69,7 @@ const MobileNav = () => (
             {item.title}
           </NavItem>
         ))}
+        <NavItem to="/flight-search">Flight Search</NavItem>
       </nav>
     </SheetContent>
   </Sheet>
